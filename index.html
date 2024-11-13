@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 50px; /* Adjusts scroll position to account for fixed header */
@@ -20,6 +21,34 @@
         body {
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Blur effect */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        /* Updated button styles */
+        .cta-button {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+            border: none;
+            border-radius: 30px; /* Rounded button */
+            padding: 12px 24px; /* Padding */
+            font-size: 16px; /* Font size */
+            transition: transform 0.3s, background 0.3s; /* Transition effects */
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+            background: linear-gradient(90deg, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+        }
+
+        /* Updated text colors */
+        body {
+            color: #333; /* Darker text for better readability */
         }
     </style>
     <meta charset="UTF-8">
@@ -30,7 +59,7 @@
     <meta name="description" content="Get the best price for your luxury watch in Singapore. Free instant valuation, top 3 offers from trusted dealers. Rolex, AP, Patek Philippe, Richard Mille & more.">
     <meta name="keywords" content="luxury watch valuation, sell watches Singapore, Rolex valuation, watch dealer Singapore, Patek Philippe valuation, AP watch value, Richard Mille price">
     <meta name="author" content="Your Company Name">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://yourwebsite.com" />
 
     <!-- Open Graph / Facebook -->
@@ -82,52 +111,51 @@
     </script>
 </head>
 <body class="bg-gray-50 text-gray-900">
-    <header class="bg-white shadow transition duration-500 ease-in-out">
+    <header class="bg-white shadow transition duration-500 ease-in-out glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="logo text-2xl font-bold">
                 <a href="#" class="hover:opacity-80 transition duration-300">YourLogo</a>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#how-it-works" class="text-gray-700 hover:text-gray-900 transition duration-300">How It Works</a>
-                <a href="#faq" class="text-gray-700 hover:text-gray-900 transition duration-300">FAQ</a>
-                <a href="#contact" class="text-gray-700 hover:text-gray-900 transition duration-300">Contact</a>
-            </nav>
-            <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="cta-sticky bg-yellow-500 text-white px-4 py-2 rounded-md shadow hover:bg-yellow-600 transition-transform transform hover:scale-105 duration-300">Get Free Quote Now</button>
+            <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="cta-button text-white">Get Free Quote Now</button>
         </div>
     </header>
 
-    <section class="hero bg-cover bg-center py-16 bg-gray-900 relative" id="hero" style="background-image: url('images/bg4.webp');">
+    <section class="hero glass py-16" id="hero" style="background-image: url('images/bg4.webp');">
         <div class="absolute inset-0 bg-gray-900 opacity-80 z-0"></div>
-        <div class="max-w-4xl mx-auto text-center text-white px-4 animate-fade-in relative z-10">
-            <h1 class="text-4xl font-extrabold mb-4 animate-slide-in-down">Sell Your Luxury Watch at the Best Price in Singapore</h1>
-            <p class="text-lg mb-8 animate-slide-in-up">Unlock Your Watch's True Worth Instantly! Our Free Valuation Service Provides You with the Top 3 Offers from Singapore's Most Trusted Dealers.</p>
-            <form id="quote-form" class="quote-form bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto" onsubmit="return submitForm()">
-                <div class="mb-4">
-                    <input type="text" id="name" placeholder="Name" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
-                </div>
-                <div class="mb-4">
-                    <input type="email" id="email" placeholder="Email" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
-                </div>
-                <div class="mb-4">
-                    <input type="tel" id="phone" placeholder="Phone Number" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
-                </div>
-                <div class="mb-4">
-                    <input type="text" id="brand" placeholder="Brand" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
-                </div>
-                <div class="mb-4">
-                    <input type="text" id="model" placeholder="Model" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
-                </div>
-                <div class="mb-4">
-                    <select id="condition" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
-                        <option value="" disabled selected>Select Condition</option>
-                        <option value="Unworn">Unworn</option>
-                        <option value="Very Good">Very Good</option>
-                        <option value="Good">Good</option>
-                        <option value="Fair">Fair</option>
-                    </select>
-                </div>
-                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="mt-8 bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
-            </form>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
+            <div class="md:w-1/2 text-white mb-8 md:mb-0">
+                <h1 class="text-4xl font-extrabold mb-4 animate-slide-in-down">Sell Your Luxury Watch at the Best Price in Singapore</h1>
+                <p class="text-lg mb-8 animate-slide-in-up">Unlock Your Watch's True Worth Instantly! Our Free Valuation Service Provides You with the Top 3 Offers from Singapore's Most Trusted Dealers.</p>
+            </div>
+            <div class="md:w-1/2 md:pl-8">
+                <form id="quote-form" class="quote-form glass p-6 rounded-lg shadow-md w-full" onsubmit="return submitForm()">
+                    <div class="mb-4">
+                        <input type="text" id="name" placeholder="Name" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" id="email" placeholder="Email" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
+                    </div>
+                    <div class="mb-4">
+                        <input type="tel" id="phone" placeholder="Phone Number" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" id="brand" placeholder="Brand" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" id="model" placeholder="Model" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
+                    </div>
+                    <div class="mb-4">
+                        <select id="condition" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300 text-black">
+                            <option value="" disabled selected>Select Condition</option>
+                            <option value="Unworn">Unworn</option>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                        </select>
+                    </div>
+                    <button class="cta-button w-full">Get Your Free Quote Now</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -137,37 +165,34 @@
             
             <div class="relative">
                 <!-- Progress Line -->
-                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-yellow-500 transform -translate-x-1/2"></div>
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1" style="background: linear-gradient(90deg, #ff7e5f, #feb47b);"></div>
                 
                 <!-- Steps -->
-                <div class="space-y-16">
+                <div class="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
                     <!-- Step 1 -->
-                    <div class="relative flex md:justify-between items-center">
-                        <div class="hidden md:block w-5/12"></div> <!-- Spacer for alignment -->
-                        <div class="absolute md:left-1/2 left-0 transform md:-translate-x-1/2 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold z-10">1</div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg md:w-5/12 ml-16 md:ml-0 hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative flex-1 h-full">
+                        <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12" style="background: linear-gradient(90deg, #ff7e5f, #feb47b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 10;">1</div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg mt-8 hover:shadow-xl transition-shadow duration-300 h-full">
                             <h3 class="text-xl font-semibold mb-4">Submit Your Watch Details</h3>
                             <p class="text-gray-600">Send us details about your watch, and we'll quickly follow up to request photos for an accurate, tailored estimate.</p>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative flex md:justify-between items-center md:flex-row flex-row-reverse">
-                        <div class="bg-white p-6 rounded-lg shadow-lg md:w-5/12 ml-16 md:ml-0 hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative flex-1 h-full">
+                        <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12" style="background: linear-gradient(90deg, #ff7e5f, #feb47b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 10;">2</div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg mt-8 hover:shadow-xl transition-shadow duration-300 h-full">
                             <h3 class="text-xl font-semibold mb-4">We Compare Valuations</h3>
                             <p class="text-gray-600">We do the legwork for you by comparing quotes from our vetted dealers, ensuring you get the best possible deal.</p>
                         </div>
-                        <div class="absolute md:left-1/2 left-0 transform md:-translate-x-1/2 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold z-10">2</div>
-                        <div class="hidden md:block w-5/12"></div> <!-- Spacer for alignment -->
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative flex md:justify-between items-center">
-                        <div class="hidden md:block w-5/12"></div> <!-- Spacer for alignment -->
-                        <div class="absolute md:left-1/2 left-0 transform md:-translate-x-1/2 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold z-10">3</div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg md:w-5/12 ml-16 md:ml-0 hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative flex-1 h-full">
+                        <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12" style="background: linear-gradient(90deg, #ff7e5f, #feb47b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; z-index: 10;">3</div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg mt-8 hover:shadow-xl transition-shadow duration-300 h-full">
                             <h3 class="text-xl font-semibold mb-4">Finalize Your Choice</h3>
-                            <p class="text-gray-600">Review your quotes and decide if you'd like to proceed. No obligation.</p>
+                            <p class="text-gray-600">Review your quotes and decide if you'd like to proceed – there's no obligation.<br><br></p>
                         </div>
                     </div>
                 </div>
@@ -177,7 +202,7 @@
                 After accepting the quote, complete the sale in person at our dealer's location. Our trusted dealers will guide you through the final steps to ensure a seamless process.
             </p>
             <div class="text-center">
-                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="mt-8 bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
+                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="mt-8 cta-button text-white px-6 py-3 shadow transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
             </div>
         </div>
     </section>
@@ -214,7 +239,7 @@
                     <p>Valuations by professionals with years of experience in luxury watches.</p>
                 </div>
             </div>
-            <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="mt-8 bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Start Your Free Watch Valuation</button>
+            <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="mt-8 cta-button text-white px-6 py-3 shadow transform hover:scale-105 transition duration-300">Start Your Free Watch Valuation</button>
         </div>
     </section>
 
@@ -253,26 +278,48 @@
     <section class="what-we-offer py-16 bg-gray-100">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-8 animate-slide-in-up">What We Offer</h2>
-            <div class="offerings-container flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
-                <div class="offer-list bg-white p-10 rounded-lg shadow max-w-lg mx-auto transition-transform transform hover:scale-105 duration-300">
-                    <ul class="list-disc text-left">
-                        <li>Rolex Watch Valuation</li>
-                        <li>Audemars Piguet Watch Valuation</li>
-                        <li>Patek Philippe Watch Valuation</li>
-                        <li>Richard Mille Watch Valuation</li>
-                        <li>Tudor Watch Valuation</li>
-                        <li>Hublot Watch Valuation</li>
-                        <li>Omega Watch Valuation</li>
-                        <li>Vacheron Constantin Watch Valuation</li>
-                        <li>Zenith Watch Valuation</li>
-                        <li>And more...</li>
-                    </ul>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/rolex-logo.svg" alt="Rolex" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Rolex</h3>
                 </div>
-                <div class="neo-vintage-callout bg-white p-6 rounded-lg shadow max-w-lg mx-auto transition-transform transform hover:scale-105 duration-300">
-                    <h3 class="text-2xl font-semibold mb-4">Looking to Sell Your Neo-Vintage Rolex?</h3>
-                    <p class="mb-4">We specialize in evaluating and pricing sought-after neo-vintage Rolex, ensuring top market offers tailored to these unique timepieces as well.</p>
-                    <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/ap-logo.svg" alt="Audemars Piguet" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Audemars Piguet</h3>
                 </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/patek-logo.svg" alt="Patek Philippe" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Patek Philippe</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/rm-logo.svg" alt="Richard Mille" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Richard Mille</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/tudor-logo.svg" alt="Tudor" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Tudor</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/hublot-logo.svg" alt="Hublot" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Hublot</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/omega-logo.svg" alt="Omega" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Omega</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/vc-logo.svg" alt="Vacheron Constantin" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Vacheron Constantin</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <img src="images/zenith-logo.svg" alt="Zenith" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-lg font-semibold">Zenith</h3>
+                </div>
+            </div>
+            <div class="neo-vintage-callout bg-white p-6 rounded-lg shadow max-w-2xl mx-auto transition-transform transform hover:scale-105 duration-300">
+                <h3 class="text-2xl font-semibold mb-4">Looking to Sell Your Neo-Vintage Rolex?</h3>
+                <p class="mb-4">We specialize in evaluating and pricing sought-after neo-vintage Rolex, ensuring top market offers tailored to these unique timepieces as well.</p>
+                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="cta-button text-white px-6 py-3  shadow  transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
             </div>
         </div>
     </section>
@@ -379,14 +426,13 @@
                 <h2 class="text-3xl font-bold mb-4 animate-slide-in-up">Have a Question? We'd Love to Help</h2>
                 <p class="text-lg mb-6">Our watch experts are ready to assist you with any questions about selling your luxury timepiece.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button onclick="openWhatsapp()" class="bg-white text-yellow-500 border-2 border-yellow-500 px-6 py-3 rounded-md shadow hover:bg-yellow-50 transform hover:scale-105 transition duration-300">Contact Us Today</button>
-                    <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
+                    <button onclick="openWhatsapp()" class="cta-button text-white px-6 py-3  shadow  transform hover:scale-105 transition duration-300">Contact Us Today</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-gray-400 py-8">
+    <footer class="bg-gray-800 text-gray-400 py-8 glass">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <p class="mb-4 md:mb-0">Contact Us: +65 1234 5678 | info@luxurywatch.com</p>
             <div class="social-links flex space-x-4">
