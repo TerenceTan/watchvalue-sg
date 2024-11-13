@@ -9,7 +9,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="images/luxury-watch-bg.jpg">
+    <link rel="preload" as="image" href="images/bg4.webp">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -38,14 +38,14 @@
     <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:title" content="Free Watch Valuation Online: Get Your Best Quote">
     <meta property="og:description" content="Curious how much your watch is worth? Try our free watch valuation tool for instant, expert estimates. Discover your watch's true value today—no obligations!">
-    <meta property="og:image" content="https://yourwebsite.com/images/social-share-image.jpg">
+    <meta property="og:image" content="images/bg4.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://yourwebsite.com">
     <meta property="twitter:title" content="Free Watch Valuation Online: Get Your Best Quote">
     <meta property="twitter:description" content="Curious how much your watch is worth? Try our free watch valuation tool for instant, expert estimates. Discover your watch's true value today—no obligations!">
-    <meta property="twitter:image" content="https://yourwebsite.com/images/social-share-image.jpg">
+    <meta property="twitter:image" content="images/bg40.webp">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -96,8 +96,9 @@
         </div>
     </header>
 
-    <section class="hero bg-cover bg-center py-16 bg-gray-900" id="hero" style="background-image: url('images/luxury-watch-bg.jpg');">
-        <div class="max-w-4xl mx-auto text-center text-white px-4 animate-fade-in">
+    <section class="hero bg-cover bg-center py-16 bg-gray-900 relative" id="hero" style="background-image: url('images/bg4.webp');">
+        <div class="absolute inset-0 bg-gray-900 opacity-80 z-0"></div>
+        <div class="max-w-4xl mx-auto text-center text-white px-4 animate-fade-in relative z-10">
             <h1 class="text-4xl font-extrabold mb-4 animate-slide-in-down">Sell Your Luxury Watch at the Best Price in Singapore</h1>
             <p class="text-lg mb-8 animate-slide-in-up">Unlock Your Watch's True Worth Instantly! Our Free Valuation Service Provides You with the Top 3 Offers from Singapore's Most Trusted Dealers.</p>
             <form id="quote-form" class="quote-form bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto" onsubmit="return submitForm()">
@@ -378,7 +379,7 @@
                 <h2 class="text-3xl font-bold mb-4 animate-slide-in-up">Have a Question? We'd Love to Help</h2>
                 <p class="text-lg mb-6">Our watch experts are ready to assist you with any questions about selling your luxury timepiece.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button onclick="openWhatsapp()" class="bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Contact Us Today</button>
+                    <button onclick="openWhatsapp()" class="bg-white text-yellow-500 border-2 border-yellow-500 px-6 py-3 rounded-md shadow hover:bg-yellow-50 transform hover:scale-105 transition duration-300">Contact Us Today</button>
                     <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
                 </div>
             </div>
