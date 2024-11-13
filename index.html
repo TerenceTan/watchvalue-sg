@@ -6,7 +6,12 @@
     <meta name="description" content="Curious how much your watch is worth? Try our free watch valuation tool for instant, expert estimates. Discover your watch's true value today—no obligations!">
     <title>Free Watch Valuation Online: Get Your Best Quote</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="images/luxury-watch-bg.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -75,10 +80,6 @@
         "serviceType": "Watch Valuation"
     }
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="images/luxury-watch-bg.jpg">
 </head>
 <body class="bg-gray-50 text-gray-900">
     <header class="bg-white shadow transition duration-500 ease-in-out">
@@ -124,7 +125,7 @@
                         <option value="Fair">Fair</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full bg-yellow-500 text-white py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
+                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="mt-8 bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
             </form>
         </div>
     </section>
@@ -174,6 +175,9 @@
             <p class="mt-12 text-center max-w-3xl mx-auto text-gray-600">
                 After accepting the quote, complete the sale in person at our dealer's location. Our trusted dealers will guide you through the final steps to ensure a seamless process.
             </p>
+            <div class="text-center">
+                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="mt-8 bg-yellow-500 text-white px-6 py-3 rounded-md shadow hover:bg-yellow-600 transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
+            </div>
         </div>
     </section>
 
@@ -182,29 +186,29 @@
             <h2 class="text-3xl font-bold mb-8 animate-slide-in-up">Why Choose Us</h2>
             <div class="flex flex-wrap justify-center gap-8 mb-8">
                 <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
-                    <img src="images/free-valuation-icon.png" alt="Free Valuation Icon" class="mx-auto mb-4 animate-fade-in">
+                    <img src="images/free.svg" alt="Free Valuation Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Free & No Obligations Valuation</h3>
                     <p>Receive a completely free valuation with zero obligations to proceed.</p>
                 </div>
                 <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
-                    <img src="images/highest-offer-icon.png" alt="Highest Offer Icon" class="mx-auto mb-4 animate-fade-in">
+                    <img src="images/best-price.svg" alt="Highest Offer Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Highest Offers</h3>
                     <p>We guarantee the most competitive valuations for your watch, ensuring you receive the best possible offer in the market.</p>
                 </div>
                 <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
-                    <img src="images/highest-offer-icon.png" alt="Personalized Offers Icon" class="mx-auto mb-4 animate-fade-in">
+                    <img src="images/personalized.svg" alt="Personalized Offers Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Personalized Offers</h3>
                     <p>Get tailored offers from a network of trusted dealers, designed to meet your specific needs and maximize your watch's value.</p>
                 </div>
             </div>
             <div class="flex flex-wrap justify-center gap-8">
                 <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
-                    <img src="images/trusted-dealers-icon.png" alt="Trusted Dealers Icon" class="mx-auto mb-4 animate-fade-in">
+                    <img src="images/trust.svg" alt="Trusted Dealers Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Vetted & Trusted Dealer Network</h3>
                     <p>We partner only with reputable, vetted dealers for complete peace of mind.</p>
                 </div>
                 <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
-                    <img src="images/expert-valuation-icon.png" alt="Expert Valuation Icon" class="mx-auto mb-4 animate-fade-in">
+                    <img src="images/badge.svg" alt="Expert Valuation Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Expert Valuation</h3>
                     <p>Valuations by professionals with years of experience in luxury watches.</p>
                 </div>
