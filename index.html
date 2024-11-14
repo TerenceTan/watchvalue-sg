@@ -41,14 +41,61 @@
             transition: transform 0.3s, background 0.3s; /* Transition effects */
         }
 
+        .cta-button.bg-white {
+            background: #ffffff;
+        }
+
         .cta-button:hover {
             transform: scale(1.05); /* Scale effect on hover */
             background: linear-gradient(90deg, #feb47b, #ff7e5f); /* Reverse gradient on hover */
         }
 
+        .cta-button.bg-white {
+            background: #ffffff;
+        }
+
         /* Updated text colors */
         body {
             color: #333; /* Darker text for better readability */
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        .swiper-container {
+            overflow: hidden;
+        }
+        .swiper-slide {
+            transition: transform 0.3s, filter 0.3s;
+        }
+        .swiper-slide-active {
+            transform: scale(1); /* Active slide remains normal size */
+        }
+
+        .swiper-slide-next, .swiper-slide-prev {
+            transform: scale(0.9) !important; /* Blur effect on the next and previous items */
+        }
+
+        .furthest-slide {
+            transform: scale(0.8) !important; /* Make the next and previous items even smaller */
+            filter: blur(4px); /* More blur on the furthest items */
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent; /* Make sure the original color doesn't show */
+            font-weight: bold; /* Enhance visibility */
+            transition: transform 0.3s ease-in-out;
+        }
+        .swiper-button-next:hover::after,
+        .swiper-button-prev:hover::after {
+            transform: scale(1.2); /* Optional scaling effect */
+        }
+
+        .swiper-pagination-bullet-active {
+            background: linear-gradient(90deg, #feb47b, #ff7e5f); /* Reverse gradient for active state */
         }
     </style>
     <meta charset="UTF-8">
@@ -124,7 +171,7 @@
         <div class="absolute inset-0 bg-gray-900 opacity-80 z-0"></div>
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
             <div class="md:w-1/2 text-white mb-8 md:mb-0">
-                <h1 class="text-4xl font-extrabold mb-4 animate-slide-in-down">Sell Your Luxury Watch at the Best Price in Singapore</h1>
+                <h1 class="text-4xl font-extrabold mb-6 animate-slide-in-down">Sell Your Luxury Watch at the Best Price in Singapore</h1>
                 <p class="text-lg mb-8 animate-slide-in-up">Unlock Your Watch's True Worth Instantly! Our Free Valuation Service Provides You with the Top 3 Offers from Singapore's Most Trusted Dealers.</p>
             </div>
             <div class="md:w-1/2 md:pl-8">
@@ -162,10 +209,9 @@
     <section class="how-it-works py-16 bg-white" id="how-it-works">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold mb-12 text-center">How Our Watch Valuation Service Works</h2>
-            
             <div class="relative">
                 <!-- Progress Line -->
-                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1" style="background: linear-gradient(90deg, #ff7e5f, #feb47b);"></div>
+                <div class="hidden md:block absolute top-5 left-[15%] right-[15%] h-1" style="background: linear-gradient(90deg, #ff7e5f, #feb47b);"></div>
                 
                 <!-- Steps -->
                 <div class="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
@@ -207,33 +253,34 @@
         </div>
     </section>
 
-    <section class="why-choose-us py-16 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8 animate-slide-in-up">Why Choose Us</h2>
+    <section class="why-choose-us py-16 bg-gray-900 bg-cover bg-center relative" style="background-image: url('images/bg2.webp');">
+        <div class="absolute inset-0 bg-gray-900 opacity-80 z-0"></div>
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl font-bold mb-8 animate-slide-in-up text-white">Why Choose Us</h2>
             <div class="flex flex-wrap justify-center gap-8 mb-8">
-                <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
+                <div class="benefit glass text-white hover:text-black hover:bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-500 w-full md:w-[30%]">
                     <img src="images/free.svg" alt="Free Valuation Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Free & No Obligations Valuation</h3>
                     <p>Receive a completely free valuation with zero obligations to proceed.</p>
                 </div>
-                <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
+                <div class="benefit glass text-white hover:text-black hover:bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-500 w-full md:w-[30%]">
                     <img src="images/best-price.svg" alt="Highest Offer Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Highest Offers</h3>
                     <p>We guarantee the most competitive valuations for your watch, ensuring you receive the best possible offer in the market.</p>
                 </div>
-                <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
+                <div class="benefit glass text-white hover:text-black hover:bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-500 w-full md:w-[30%]">
                     <img src="images/personalized.svg" alt="Personalized Offers Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Personalized Offers</h3>
                     <p>Get tailored offers from a network of trusted dealers, designed to meet your specific needs and maximize your watch's value.</p>
                 </div>
             </div>
             <div class="flex flex-wrap justify-center gap-8">
-                <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
+                <div class="benefit glass text-white hover:text-black hover:bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-500 w-full md:w-[30%]">
                     <img src="images/trust.svg" alt="Trusted Dealers Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Vetted & Trusted Dealer Network</h3>
                     <p>We partner only with reputable, vetted dealers for complete peace of mind.</p>
                 </div>
-                <div class="benefit bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300 w-full md:w-[30%]">
+                <div class="benefit glass text-white hover:text-black hover:bg-white p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 duration-500 w-full md:w-[30%]">
                     <img src="images/badge.svg" alt="Expert Valuation Icon" class="mx-auto mb-4 animate-fade-in w-16 h-16">
                     <h3 class="text-xl font-semibold mb-2">Expert Valuation</h3>
                     <p>Valuations by professionals with years of experience in luxury watches.</p>
@@ -248,26 +295,44 @@
             <h2 class="text-3xl font-bold mb-8 animate-slide-in-up">What Our Customers Are Saying</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <div class="stars text-yellow-500 text-2xl">
+                        ★★★★★
+                    </div>
                     <p class="italic mb-2">"Absolutely seamless experience! Got the best offer for my Rolex, and the process was smooth from start to finish."</p>
                     <span class="font-semibold">- J. Tan</span>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <div class="stars text-yellow-500 text-2xl">
+                        ★★★★★
+                    </div>
                     <p class="italic mb-2">"Great service. They made the entire process easy and stress-free, and I received an excellent valuation for my Omega watch."</p>
                     <span class="font-semibold">- K. Lim</span>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <div class="stars text-yellow-500 text-2xl">
+                        ★★★★★
+                    </div>
                     <p class="italic mb-2">"I was skeptical at first, but the valuation I received was fair and the entire process was so convenient. Highly recommend!"</p>
                     <span class="font-semibold">- A. Wong</span>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <div class="stars text-yellow-500 text-2xl">
+                        ★★★★★
+                    </div>
                     <p class="italic mb-2">"Exceptional service from start to finish. I appreciated the honesty and transparency throughout, and I ended up getting a great deal for my Patek Philippe."</p>
                     <span class="font-semibold">- R. Singh</span>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <div class="stars text-yellow-500 text-2xl">
+                        ★★★★★
+                    </div>
                     <p class="italic mb-2">"Fast, professional, and reliable. They handled everything so smoothly, and I couldn't be happier with the price I got for my Hublot."</p>
                     <span class="font-semibold">- M. Lee</span>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                    <div class="stars text-yellow-500 text-2xl">
+                        ★★★★★
+                    </div>
                     <p class="italic mb-2">“Selling my Richard Mille through this service was a breeze. The team was incredibly helpful, and I felt comfortable every step of the way. Highly recommended!”</p>
                     <span class="font-semibold">- D. Tan</span>
                 </div>
@@ -276,50 +341,74 @@
     </section>
 
     <section class="what-we-offer py-16 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-8 animate-slide-in-up">What We Offer</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/rolex-logo.svg" alt="Rolex" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Rolex</h3>
+            
+            <div class="swiper-container mb-10 py-8 relative">
+                <div class="swiper-wrapper mb-10">
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/Rolex.avif" alt="Rolex" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Rolex<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/AP.avif" alt="Audemars Piguet" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Audemars Piguet<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/PP.avif" alt="Patek Philippe" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Patek Philippe<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/RM.avif" alt="Richard Mille" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Richard Mille<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/Tudor.avif" alt="Tudor" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Tudor<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/Hublot.avif" alt="Hublot" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Hublot<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/Omega.avif" alt="Omega" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Omega<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/Vacheron Constantin.avif" alt="Vacheron Constantin" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Vacheron Constantin<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
+                            <img src="images/brands/Zenith.avif" alt="Zenith" class="mx-auto mb-4 w-1/2">
+                            <h3 class="text-lg font-semibold">Zenith<br><span class="text-gray-500 text-sm">Watch Valuation</span></h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/ap-logo.svg" alt="Audemars Piguet" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Audemars Piguet</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/patek-logo.svg" alt="Patek Philippe" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Patek Philippe</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/rm-logo.svg" alt="Richard Mille" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Richard Mille</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/tudor-logo.svg" alt="Tudor" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Tudor</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/hublot-logo.svg" alt="Hublot" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Hublot</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/omega-logo.svg" alt="Omega" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Omega</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/vc-logo.svg" alt="Vacheron Constantin" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Vacheron Constantin</h3>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <img src="images/zenith-logo.svg" alt="Zenith" class="w-16 h-16 mx-auto mb-4">
-                    <h3 class="text-lg font-semibold">Zenith</h3>
-                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="neo-vintage-callout bg-white p-6 rounded-lg shadow max-w-2xl mx-auto transition-transform transform hover:scale-105 duration-300">
+            <div class="neo-vintage-callout text-white p-6 rounded-lg shadow-lg max-w-3xl mx-auto" style="background: linear-gradient(90deg, #ff7e5f, #feb47b);">
                 <h3 class="text-2xl font-semibold mb-4">Looking to Sell Your Neo-Vintage Rolex?</h3>
                 <p class="mb-4">We specialize in evaluating and pricing sought-after neo-vintage Rolex, ensuring top market offers tailored to these unique timepieces as well.</p>
-                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="cta-button text-white px-6 py-3  shadow  transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
+                <button onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'})" class="cta-button text-black bg-white px-6 py-3  shadow  transform hover:scale-105 transition duration-300">Get Your Free Quote Now</button>
             </div>
         </div>
     </section>
@@ -420,7 +509,7 @@
         </div>
     </section>
 
-    <section class="contact py-16 bg-gray-100" id="contact">
+    <section class="contact py-16 bg-gray-800" id="contact">
         <div class="max-w-6xl mx-auto px-4">
             <div class="bg-white p-8 rounded-lg shadow-lg text-center">
                 <h2 class="text-3xl font-bold mb-4 animate-slide-in-up">Have a Question? We'd Love to Help</h2>
@@ -432,7 +521,7 @@
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-gray-400 py-8 glass">
+<!--     <footer class="bg-gray-800 text-gray-400 py-8 glass">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <p class="mb-4 md:mb-0">Contact Us: +65 1234 5678 | info@luxurywatch.com</p>
             <div class="social-links flex space-x-4">
@@ -441,7 +530,7 @@
                 <a href="#" class="hover:text-white transition duration-300">LinkedIn</a>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <script>
         const WHATSAPP_NUMBER = "60129448722";
@@ -509,6 +598,49 @@
                     e.preventDefault();
                     scrollToForm();
                 };
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            lazy: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 1,
+            spaceBetween: 5,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true, // Enable infinite loop
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+        });
+
+        swiper.on('slideChange', function () {
+            const slides = document.querySelectorAll('.swiper-slide');
+            slides.forEach((slide, index) => {
+                slide.classList.remove('furthest-slide'); // Remove class from all slides
+                if (index === swiper.activeIndex + 2 || index === swiper.activeIndex - 2) {
+                    slide.classList.add('furthest-slide'); // Add class to the furthest slides
+                }
             });
         });
     </script>
