@@ -67,18 +67,18 @@
         .swiper-slide {
             transition: transform 0.3s, filter 0.3s;
         }
-        .swiper-slide-active {
-            transform: scale(1); /* Active slide remains normal size */
+        /* .swiper-slide-active {
+            transform: scale(1); 
         }
 
         .swiper-slide-next, .swiper-slide-prev {
-            transform: scale(0.9) !important; /* Blur effect on the next and previous items */
+            transform: scale(0.9) !important; 
         }
 
         .furthest-slide {
-            transform: scale(0.8) !important; /* Make the next and previous items even smaller */
-            filter: blur(4px); /* More blur on the furthest items */
-        }
+            transform: scale(0.8) !important; 
+            filter: blur(4px); 
+        } */
 
         .swiper-button-next::after,
         .swiper-button-prev::after {
@@ -96,6 +96,11 @@
 
         .swiper-pagination-bullet-active {
             background: linear-gradient(90deg, #feb47b, #ff7e5f); /* Reverse gradient for active state */
+        }
+        .swiper-wrapper {
+            -webkit-transition-timing-function:linear!important; 
+            -o-transition-timing-function:linear!important;
+            transition-timing-function:linear!important; 
         }
     </style>
     <meta charset="UTF-8">
@@ -169,7 +174,7 @@
 
     <section class="hero glass py-16" id="hero" style="background-image: url('images/bg4.webp');">
         <div class="absolute inset-0 bg-gray-900 opacity-80 z-0"></div>
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 gap-x-20">
             <div class="md:w-1/2 text-white mb-8 md:mb-0">
                 <h1 class="text-4xl font-extrabold mb-6 animate-slide-in-down">Sell Your Luxury Watch at the Best Price in Singapore</h1>
                 <p class="text-lg mb-8 animate-slide-in-up">Unlock Your Watch's True Worth Instantly! Our Free Valuation Service Provides You with the Top 3 Offers from Singapore's Most Trusted Dealers.</p>
@@ -295,46 +300,64 @@
             <h2 class="text-3xl font-bold mb-8 animate-slide-in-up">What Our Customers Are Saying</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <div class="stars text-yellow-500 text-2xl">
-                        ★★★★★
+                    <div class="flex items-center mb-4">
+                        <img src="images/testi/j_tan.jpg" alt="J. Tan" class="w-12 h-12 rounded-full mr-3">
+                        <div class="text-left">
+                            <span class="font-semibold ml-1">J. Tan</span>
+                            <div class="stars text-yellow-500 text-2xl">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="italic mb-2">"Absolutely seamless experience! Got the best offer for my Rolex, and the process was smooth from start to finish."</p>
-                    <span class="font-semibold">- J. Tan</span>
+                    <p class="italic mb-2 text-left">"Absolutely seamless experience! Got the best offer for my Rolex, and the process was smooth from start to finish."</p>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <div class="stars text-yellow-500 text-2xl">
-                        ★★★★★
+                    <div class="flex items-center mb-4">
+                        <img src="images/testi/k_lim.jpg" alt="K. Lim" class="w-12 h-12 rounded-full mr-3">
+                        <div class="text-left">
+                            <span class="font-semibold ml-1">K. Lim</span>
+                            <div class="stars text-yellow-500 text-2xl">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="italic mb-2">"Great service. They made the entire process easy and stress-free, and I received an excellent valuation for my Omega watch."</p>
-                    <span class="font-semibold">- K. Lim</span>
+                    <p class="italic mb-2 text-left">"Great service. They made the entire process easy and stress-free, and I received an excellent valuation for my Omega watch."</p>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <div class="stars text-yellow-500 text-2xl">
-                        ★★★★★
+                    <div class="flex items-center mb-4">
+                        <img src="images/testi/a_wong.jpg" alt="A. Wong" class="w-12 h-12 rounded-full mr-3">
+                        <div class="text-left">
+                            <span class="font-semibold ml-1">A. Wong</span>
+                            <div class="stars text-yellow-500 text-2xl">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="italic mb-2">"I was skeptical at first, but the valuation I received was fair and the entire process was so convenient. Highly recommend!"</p>
-                    <span class="font-semibold">- A. Wong</span>
+                    <p class="italic mb-2 text-left">"I was skeptical at first, but the valuation I received was fair and the entire process was so convenient. Highly recommend!"</p>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <div class="stars text-yellow-500 text-2xl">
-                        ★★★★★
+                    <div class="flex items-center mb-4">
+                        <img src="images/testi/r_ng.jpg" alt="Raymond" class="w-12 h-12 rounded-full mr-3">
+                        <div class="text-left">
+                            <span class="font-semibold ml-1">Raymond</span>
+                            <div class="stars text-yellow-500 text-2xl">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="italic mb-2">"Exceptional service from start to finish. I appreciated the honesty and transparency throughout, and I ended up getting a great deal for my Patek Philippe."</p>
-                    <span class="font-semibold">- R. Singh</span>
+                    <p class="italic mb-2 text-left">"Exceptional service from start to finish. I appreciated the honesty and transparency throughout, and I ended up getting a great deal for my Patek Philippe."</p>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <div class="stars text-yellow-500 text-2xl">
-                        ★★★★★
+                    <div class="flex items-center mb-4">
+                        <img src="images/testi/m_lee.jpg" alt="M. Lee" class="w-12 h-12 rounded-full mr-3">
+                        <div class="text-left">
+                            <span class="font-semibold ml-1">M. Lee</span>
+                            <div class="stars text-yellow-500 text-2xl">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="italic mb-2">"Fast, professional, and reliable. They handled everything so smoothly, and I couldn't be happier with the price I got for my Hublot."</p>
-                    <span class="font-semibold">- M. Lee</span>
+                    <p class="italic mb-2 text-left">"Fast, professional, and reliable. They handled everything so smoothly, and I couldn't be happier with the price I got for my Hublot."</p>
                 </div>
                 <div class="testimonial bg-gray-100 p-6 rounded-lg shadow transition-transform transform hover:scale-105 duration-300">
-                    <div class="stars text-yellow-500 text-2xl">
-                        ★★★★★
+                    <div class="flex items-center mb-4">
+                        <img src="images/testi/d_tan.jpg" alt="D. Tan" class="w-12 h-12 rounded-full mr-3">
+                        <div class="text-left">
+                            <span class="font-semibold ml-1">D. Tan</span>
+                            <div class="stars text-yellow-500 text-2xl">★★★★★</div>
+                        </div>
                     </div>
-                    <p class="italic mb-2">“Selling my Richard Mille through this service was a breeze. The team was incredibly helpful, and I felt comfortable every step of the way. Highly recommended!”</p>
-                    <span class="font-semibold">- D. Tan</span>
+                    <p class="italic mb-2 text-left">“Selling my Richard Mille through this service was a breeze. The team was incredibly helpful, and I felt comfortable every step of the way. Highly recommended!”</p>
                 </div>
             </div>
         </div>
@@ -401,9 +424,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-button-next"></div>
+                <!-- <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div> -->
             </div>
             <div class="neo-vintage-callout text-white p-6 rounded-lg shadow-lg max-w-3xl mx-auto" style="background: linear-gradient(90deg, #ff7e5f, #feb47b);">
                 <h3 class="text-2xl font-semibold mb-4">Looking to Sell Your Neo-Vintage Rolex?</h3>
@@ -605,31 +628,34 @@
     <script>
         var swiper = new Swiper('.swiper-container', {
             lazy: true,
-            navigation: {
+            /* navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
             pagination: {
                 el: ".swiper-pagination",
-            },
+            }, */
             grabCursor: true,
-            centeredSlides: true,
+            // centeredSlides: true,
             slidesPerView: 1,
-            spaceBetween: 5,
+            spaceBetween: 20,
+            loop: true, // Enable infinite loop
             autoplay: {
-                delay: 3000,
+                delay: 1,
                 disableOnInteraction: false,
             },
-            loop: true, // Enable infinite loop
+            freeMode: true,
+            speed: 5000,
+            freeModeMomentum: false,
             breakpoints: {
                 640: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                 },
                 768: {
                     slidesPerView: 3,
                 },
                 1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 5,
                 },
             },
         });
