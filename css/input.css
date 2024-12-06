@@ -77,3 +77,9 @@ body {
     -o-transition-timing-function:linear!important;
     transition-timing-function:linear!important; 
 }
+
+@media only screen and (max-width:767px) {
+    #hero {
+        background-image: none !important;
+    }
+}
